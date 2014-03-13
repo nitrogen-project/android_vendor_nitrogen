@@ -38,8 +38,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
     persist.service.adb.enable=1
 
 # Common overlay
-PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/nitrogen/overlay/common
+DEVICE_PACKAGE_OVERLAYS += vendor/nitrogen/overlay/common
 
 # Fix Dialer
 PRODUCT_COPY_FILES +=  \
