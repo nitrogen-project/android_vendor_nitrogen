@@ -18,8 +18,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/addon.d/50-nitrogen.sh:system/addon.d/50-nitrogen.sh \
-    vendor/nitrogen/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/nitrogen/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions
+    vendor/nitrogen/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/nitrogen/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
 
 # Enable SIP and VoIP on all targets
 PRODUCT_COPY_FILES += \

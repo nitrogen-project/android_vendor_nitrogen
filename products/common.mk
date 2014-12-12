@@ -103,8 +103,8 @@ PRODUCT_COPY_FILES += \
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/addon.d/50-nitrogen.sh:system/addon.d/50-nitrogen.sh \
-    vendor/nitrogen/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/nitrogen/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions
+    vendor/nitrogen/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/nitrogen/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
 
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
