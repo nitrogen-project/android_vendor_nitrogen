@@ -1,2 +1,6 @@
+# Filesystem tools
+/system/bin/fsck\.exfat                 u:object_r:fsck_exec:s0
+/system/bin/fsck\.ntfs                  u:object_r:fsck_exec:s0
+
 # Sysinit
 /system/bin/sysinit                     u:object_r:sysinit_exec:s0
