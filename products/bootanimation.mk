@@ -16,6 +16,10 @@ ifneq ($(filter nitrogen_geehrc,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
         vendor/nitrogen/prebuilt/common/bootanimation/768x1280.zip:system/media/bootanimation.zip
 endif
+ifneq ($(filter nitrogen_mako,$(TARGET_PRODUCT)),)
+    PRODUCT_COPY_FILES += \
+        vendor/nitrogen/prebuilt/common/bootanimation/768x1280.zip:system/media/bootanimation.zip
+endif
 ifneq ($(filter nitrogen_hammerhead,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
         vendor/nitrogen/prebuilt/common/bootanimation/1080x1920.zip:system/media/bootanimation.zip
