@@ -15,7 +15,7 @@
 #
 # Nitrogen OS builder script
 
-ver_script=1.1
+ver_script=1.2
 
 nitrogen_dir=nitrogen
 nitrogen_build_dir=$nitrogen_dir-build
@@ -199,6 +199,32 @@ function repo_device_sync {
 			repo_clone
 		fi
 	fi
+	# SHAMU
+	if [ $configb = "shamu" ]; then
+		if [ -d device/moto/shamu ]; then
+			cd device/moto/shamu
+			git pull -f
+			cd ~/$nitrogen_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d kernel/moto/shamu ]; then
+			cd kernel/moto/shamu
+			git pull -f
+			cd ~/$nitrogen_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d vendor/moto/shamu ]; then
+			cd vendor/moto/shamu
+			git pull -f
+			cd ~/$nitrogen_dir
+		else
+			repo_clone
+		fi
+	fi
 }
 
 function repo_clone {
@@ -242,6 +268,20 @@ function repo_clone {
 		if ! [ -d vendor/lge/mako ]; then
 			echo -e "${bldred}N4: No vendor, downloading...${txtrst}"
 			git clone https://github.com/nitrogen-os-devices/android_vendor_lge_mako.git vendor/lge/mako
+		fi
+	fi
+	if [ $configb = "shamu" ]; then
+		if ! [ -d device/moto/shamu ]; then
+			echo -e "${bldred}N6: No device tree, downloading...${txtrst}"
+			git clone https://github.com/nitrogen-os-devices/android_device_moto_shamu.git device/moto/shamu
+		fi
+		if ! [ -d kernel/moto/shamu ]; then
+			echo -e "${bldred}N6: No kernel sources, downloading...${txtrst}"
+			git clone https://github.com/nitrogen-os-devices/android_kernel_moto_shamu.git kernel/moto/shamu
+		fi
+		if ! [ -d vendor/moto/shamu ]; then
+			echo -e "${bldred}N6: No vendor, downloading...${txtrst}"
+			git clone https://github.com/nitrogen-os-devices/android_vendor_moto_shamu.git vendor/moto/shamu
 		fi
 	fi
 }
@@ -289,7 +329,8 @@ while read -p "${grn}Please choose your device:${txtrst}
  1. geehrc (LG Optimus G intl E975)
  2. hammerhead (Google Nexus 5 D820, D821)
  3. mako (Google Nexus 4 E960)
- 4. Abort
+ 4. shamu (Google Nexus 6)
+ 5. Abort
 :> " cchoice
 do
 case "$cchoice" in
@@ -306,6 +347,10 @@ case "$cchoice" in
 		break
 		;;
 	4 )
+		configb=shamu
+		break
+		;;
+	5 )
 		break
 		;;
 	* )
