@@ -37,6 +37,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Busybox \
     LockClock \
+    NitrogenWallpapers \
     Stk \
     Terminal
 
