@@ -15,7 +15,7 @@
 #
 # Nitrogen OS builder script
 
-ver_script=1.2
+ver_script=1.3
 
 nitrogen_dir=nitrogen
 nitrogen_build_dir=$nitrogen_dir-build
@@ -26,8 +26,6 @@ if ! [ -d ~/$nitrogen_build_dir ]; then
 fi
 
 cpucores=$(cat /proc/cpuinfo | grep 'model name' | sed -e 's/.*: //' | wc -l)
-
-#export USE_PREBUILT_CHROMIUM=1
 
 configb=null
 build_img=null
@@ -231,57 +229,57 @@ function repo_clone {
 	if [ $configb = "geehrc" ]; then
 		if ! [ -d device/lge/geehrc ]; then
 			echo -e "${bldred}geehrc: No device tree, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-project/android_device_lge_geehrc.git device/lge/geehrc
+			git clone https://github.com/nitrogen-project/android_device_lge_geehrc.git -b n device/lge/geehrc
 		fi
 		if ! [ -d kernel/lge/geehrc ]; then
 			echo -e "${bldred}geehrc: No kernel sources, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-project/android_kernel_lge_geehrc.git kernel/lge/geehrc
+			git clone https://github.com/nitrogen-project/android_kernel_lge_geehrc.git -b n kernel/lge/geehrc
 		fi
 		if ! [ -d vendor/lge/geehrc ]; then
 			echo -e "${bldred}geehrc: No vendor, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-project/android_vendor_lge_geehrc.git vendor/lge/geehrc
+			git clone https://github.com/nitrogen-project/android_vendor_lge_geehrc.git -b n vendor/lge/geehrc
 		fi
 	fi
 	if [ $configb = "hammerhead" ]; then
 		if ! [ -d device/lge/hammerhead ]; then
 			echo -e "${bldred}N5: No device tree, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_device_lge_hammerhead.git device/lge/hammerhead
+			git clone https://github.com/nitrogen-os-devices/android_device_lge_hammerhead.git -b n device/lge/hammerhead
 		fi
 		if ! [ -d kernel/lge/hammerhead ]; then
 			echo -e "${bldred}N5: No kernel sources, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_kernel_lge_hammerhead.git kernel/lge/hammerhead
+			git clone https://github.com/nitrogen-os-devices/android_kernel_lge_hammerhead.git -b n kernel/lge/hammerhead
 		fi
 		if ! [ -d vendor/lge/hammerhead ]; then
 			echo -e "${bldred}N5: No vendor, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_vendor_lge_hammerhead.git vendor/lge/hammerhead
+			git clone https://github.com/nitrogen-os-devices/android_vendor_lge_hammerhead.git -b n vendor/lge/hammerhead
 		fi
 	fi
 	if [ $configb = "mako" ]; then
 		if ! [ -d device/lge/mako ]; then
 			echo -e "${bldred}N4: No device tree, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_device_lge_mako.git device/lge/mako
+			git clone https://github.com/nitrogen-os-devices/android_device_lge_mako.git -b n device/lge/mako
 		fi
 		if ! [ -d kernel/lge/mako ]; then
 			echo -e "${bldred}N4: No kernel sources, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_kernel_lge_mako.git kernel/lge/mako
+			git clone https://github.com/nitrogen-os-devices/android_kernel_lge_mako.git -b n kernel/lge/mako
 		fi
 		if ! [ -d vendor/lge/mako ]; then
 			echo -e "${bldred}N4: No vendor, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_vendor_lge_mako.git vendor/lge/mako
+			git clone https://github.com/nitrogen-os-devices/android_vendor_lge_mako.git -b n vendor/lge/mako
 		fi
 	fi
 	if [ $configb = "shamu" ]; then
 		if ! [ -d device/moto/shamu ]; then
 			echo -e "${bldred}N6: No device tree, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_device_moto_shamu.git device/moto/shamu
+			git clone https://github.com/nitrogen-os-devices/android_device_moto_shamu.git -b n device/moto/shamu
 		fi
 		if ! [ -d kernel/moto/shamu ]; then
 			echo -e "${bldred}N6: No kernel sources, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_kernel_moto_shamu.git kernel/moto/shamu
+			git clone https://github.com/nitrogen-os-devices/android_kernel_moto_shamu.git -b n kernel/moto/shamu
 		fi
 		if ! [ -d vendor/moto/shamu ]; then
 			echo -e "${bldred}N6: No vendor, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_vendor_moto_shamu.git vendor/moto/shamu
+			git clone https://github.com/nitrogen-os-devices/android_vendor_moto_shamu.git -b n vendor/moto/shamu
 		fi
 	fi
 }
@@ -328,8 +326,8 @@ function set_device {
 while read -p "${grn}Please choose your device:${txtrst}
  1. geehrc (LG Optimus G intl E975)
  2. hammerhead (Google Nexus 5 D820, D821)
- 3. mako (Google Nexus 4 E960)
- 4. shamu (Google Nexus 6)
+ 3. mako (Google Nexus 4 E960) ${cya}cooming soon${txtrst}
+ 4. shamu (Google Nexus 6) ${cya}cooming soon${txtrst}
  5. Abort
 :> " cchoice
 do
@@ -395,7 +393,7 @@ ${grn}Please choose your option:${txtrst}
   10. Install soft
   11. Change device
   12. Exit
-:> " cchoice
+${grn}:>${txtrst} " cchoice
 do
 case "$cchoice" in
 	1 )
@@ -445,7 +443,7 @@ case "$cchoice" in
 		clear
 		;;
 	10 )
-		sudo apt-get install bison build-essential curl flex lib32ncurses5-dev lib32readline-gplv2-dev lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libwxgtk2.8-dev libxml2 libxml2-utils lzop openjdk-7-jdk openjdk-7-jre pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev git-core make phablet-tools gperf
+		sudo apt-get install bison build-essential curl flex lib32ncurses5-dev lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev git-core make phablet-tools gperf
 		othermsg="Soft installed"
 		clear
 		;;
