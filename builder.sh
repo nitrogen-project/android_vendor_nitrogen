@@ -15,7 +15,7 @@
 #
 # Nitrogen OS builder script
 
-ver_script=1.3
+ver_script=1.4
 
 nitrogen_dir=nitrogen
 nitrogen_build_dir=$nitrogen_dir-build
@@ -47,6 +47,11 @@ function build_nitrogen {
 		echo "Device is not set!"
 		break
 	fi
+	if [ -f builder_start.sh ]; then
+		echo -e "Running start user script..."
+		. builder_start.sh
+		echo -e "Done!"
+	fi
 	repo_clone
 	echo -e "${bldblu}Setting up environment ${txtrst}"
 	. build/envsetup.sh
@@ -66,6 +71,11 @@ function build_nitrogen {
 		echo -e "${bldred}Error copyng zip!${txtrst}"
 	fi
 	cd ~/$nitrogen_dir
+	if [ -f builder_end.sh ]; then
+		echo -e "Running end user script..."
+		. builder_end.sh
+		echo -e "Done!"
+	fi
 	echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
 }
 
@@ -326,7 +336,7 @@ function set_device {
 while read -p "${grn}Please choose your device:${txtrst}
  1. geehrc (LG Optimus G intl E975)
  2. hammerhead (Google Nexus 5 D820, D821)
- 3. mako (Google Nexus 4 E960) ${cya}cooming soon${txtrst}
+ 3. mako (Google Nexus 4 E960)
  4. shamu (Google Nexus 6) ${cya}cooming soon${txtrst}
  5. Abort
 :> " cchoice
