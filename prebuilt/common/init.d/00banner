@@ -1,0 +1,2 @@
+#!/system/bin/sh
+log -p i -t start "Welcome to Nitrogen-OS";
