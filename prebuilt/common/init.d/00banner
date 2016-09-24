@@ -1,2 +1,9 @@
 #!/system/bin/sh
-log -p i -t start "Welcome to Nitrogen-OS";
+log -p i -t start "******** Welcome to Nitrogen Project *********";
+log -p i -t start "*  * *** *** **** **** **** *** *  *  **** ***";
+log -p i -t start "** *  *   *  *  * *  * *    *   ** *  *  * *";
+log -p i -t start "* **  *   *  **** *  * * ** *** * **  *  * ***";
+log -p i -t start "*  *  *   *  * *  *  * *  * *   *  *  *  *   *";
+log -p i -t start "*  * ***  *  * *  **** **** *** *  *  **** ***";
+log -p i -t start "* By xyyx & Mr.MEX *************** Android 7 *";
+
