@@ -72,5 +72,8 @@ PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/nitrogen/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions
 
+# Nitrogen OTA
+$(call inherit-product-if-exists, vendor/nitrogen/products/ota.mk)
+
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk) 
