@@ -25,6 +25,19 @@ ifneq ($(filter nitrogen_geehrc,$(TARGET_PRODUCT)),)
 
 endif
 
+ifneq ($(filter nitrogen_mako,$(TARGET_PRODUCT)),)
+
+    PRODUCT_PACKAGES += \
+        NitrogenOTA \
+        libbypass
+
+    PRODUCT_PROPERTY_OVERRIDES += \
+        ro.ota.romname=Nitrogen-OS \
+        ro.ota.version=$(shell date +"%Y%m%d") \
+        ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/mako.xml
+
+endif
+
 ifneq ($(filter nitrogen_hammerhead,$(TARGET_PRODUCT)),)
 
     PRODUCT_PACKAGES += \
