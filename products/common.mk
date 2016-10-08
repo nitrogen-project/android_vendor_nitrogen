@@ -48,6 +48,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Browser \
     Busybox \
+    Eleven \
     LockClock \
     masquerade \
     NitrogenWallpapers \
