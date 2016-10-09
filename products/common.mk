@@ -27,6 +27,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
+# Disable HDCP check
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.wfd.nohdcp=1
+
 ADDITIONAL_DEFAULT_PROPERTIES := \
     ro.adb.secure=0 \
     ro.secure=0 \
