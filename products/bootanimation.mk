@@ -12,15 +12,35 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter nitrogen_geehrc,$(TARGET_PRODUCT)),)
+ifneq ($(filter 720,$(TARGET_SCREEN_WIDTH)),)
     PRODUCT_COPY_FILES += \
-        vendor/nitrogen/prebuilt/common/bootanimation/768x1280.zip:system/media/bootanimation.zip
+        vendor/nitrogen/prebuilt/common/bootanimation/720x720.zip:system/media/bootanimation.zip
 endif
-ifneq ($(filter nitrogen_mako,$(TARGET_PRODUCT)),)
+ifneq ($(filter 768,$(TARGET_SCREEN_WIDTH)),)
     PRODUCT_COPY_FILES += \
-        vendor/nitrogen/prebuilt/common/bootanimation/768x1280.zip:system/media/bootanimation.zip
+        vendor/nitrogen/prebuilt/common/bootanimation/768x768.zip:system/media/bootanimation.zip
 endif
-ifneq ($(filter nitrogen_hammerhead,$(TARGET_PRODUCT)),)
+ifneq ($(filter 800,$(TARGET_SCREEN_WIDTH)),)
     PRODUCT_COPY_FILES += \
-        vendor/nitrogen/prebuilt/common/bootanimation/1080x1920.zip:system/media/bootanimation.zip
+        vendor/nitrogen/prebuilt/common/bootanimation/800x800.zip:system/media/bootanimation.zip
+endif
+ifneq ($(filter 1024,$(TARGET_SCREEN_WIDTH)),)
+    PRODUCT_COPY_FILES += \
+        vendor/nitrogen/prebuilt/common/bootanimation/1024x1024.zip:system/media/bootanimation.zip
+endif
+ifneq ($(filter 1080,$(TARGET_SCREEN_WIDTH)),)
+    PRODUCT_COPY_FILES += \
+        vendor/nitrogen/prebuilt/common/bootanimation/1080x1080.zip:system/media/bootanimation.zip
+endif
+ifneq ($(filter 1200,$(TARGET_SCREEN_WIDTH)),)
+    PRODUCT_COPY_FILES += \
+        vendor/nitrogen/prebuilt/common/bootanimation/1200x1200.zip:system/media/bootanimation.zip
+endif
+ifneq ($(filter 1280,$(TARGET_SCREEN_WIDTH)),)
+    PRODUCT_COPY_FILES += \
+        vendor/nitrogen/prebuilt/common/bootanimation/1280x1280.zip:system/media/bootanimation.zip
+endif
+ifneq ($(filter 1440,$(TARGET_SCREEN_WIDTH)),)
+    PRODUCT_COPY_FILES += \
+        vendor/nitrogen/prebuilt/common/bootanimation/1440x1440.zip:system/media/bootanimation.zip
 endif
