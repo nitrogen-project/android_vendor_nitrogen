@@ -13,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Nitrogen OS builder script
+# Nitrogen OS MR2 build script
 
-ver_script=1.4
+ver_script=1.5
 
 nitrogen_dir=nitrogen
 nitrogen_build_dir=$nitrogen_dir-build
@@ -63,12 +63,29 @@ function build_nitrogen {
 	make otapackage -j$cpucores 2<&1 | tee builder.log
 	res2=$(date +%s.%N)
 	cd out/target/product/$configb
-	FILE=$(ls *.zip | grep Nitrogen)
+	FILE=Nitrogen-OS-$configb-`date +"%Y%m%d"`.zip
+	FILE2=nitrogen_$configb-Changelog.txt
 	if [ -f ./$FILE ]; then
 		echo -e "${bldgrn}Copyng zip file...${txtrst}"
-		cp $FILE ~/$nitrogen_build_dir/$FILE
+		if [ -f ~/$nitrogen_build_dir/$FILE ]; then
+			rm ~/$nitrogen_build_dir/$FILE
+			cp $FILE ~/$nitrogen_build_dir/$FILE
+		else
+			cp $FILE ~/$nitrogen_build_dir/$FILE
+		fi
 	else
 		echo -e "${bldred}Error copyng zip!${txtrst}"
+	fi
+	if [ -f ./$FILE2 ]; then
+		echo -e "${bldgrn}Copyng changelog...${txtrst}"
+		if [ -f ~/$nitrogen_build_dir/$FILE2 ]; then
+			rm ~/$nitrogen_build_dir/$FILE2
+			cp $FILE2 ~/$nitrogen_build_dir/$FILE2
+		else
+			cp $FILE2 ~/$nitrogen_build_dir/$FILE2
+		fi
+	else
+		echo -e "${bldred}Error copyng changelog!${txtrst}"
 	fi
 	cd ~/$nitrogen_dir
 	if [ -f builder_end.sh ]; then
@@ -337,7 +354,7 @@ while read -p "${grn}Please choose your device:${txtrst}
  1. geehrc (LG Optimus G intl E975)
  2. hammerhead (Google Nexus 5 D820, D821)
  3. mako (Google Nexus 4 E960)
- 4. shamu (Google Nexus 6) ${cya}cooming soon${txtrst}
+ 4. shamu (Google Nexus 6)
  5. Abort
 :> " cchoice
 do
@@ -453,7 +470,9 @@ case "$cchoice" in
 		clear
 		;;
 	10 )
-		sudo apt-get install bison build-essential curl flex lib32ncurses5-dev lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev git-core make phablet-tools gperf
+		sudo add-apt-repository ppa:openjdk-r/ppa
+		sudo apt-get update
+		sudo apt-get install bison build-essential curl ccache flex lib32ncurses5-dev lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev git-core make phablet-tools gperf openjdk-8-jdk
 		othermsg="Soft installed"
 		clear
 		;;
