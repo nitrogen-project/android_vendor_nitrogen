@@ -15,7 +15,7 @@
 #
 # Nitrogen OS MR2 build script
 
-ver_script=1.5
+ver_script=1.6
 
 nitrogen_dir=nitrogen
 nitrogen_build_dir=$nitrogen_dir-build
@@ -149,27 +149,21 @@ function repo_device_sync {
 	# GEEHRC
 	if [ $configb = "geehrc" ]; then
 		if [ -d device/lge/geehrc ]; then
-			cd device/lge/geehrc
-			git pull -f
-			cd ~/$nitrogen_dir
+			repo sync device/lge/geehrc
 		else
-			repo_clone
+			repo sync device/lge/geehrc
 		fi
 
 		if [ -d kernel/lge/geehrc ]; then
-			cd kernel/lge/geehrc
-			git pull -f
-			cd ~/$nitrogen_dir
+			repo sync kernel/lge/geehrc
 		else
-			repo_clone
+			repo sync kernel/lge/geehrc
 		fi
 
 		if [ -d vendor/lge/geehrc ]; then
-			cd vendor/lge/geehrc
-			git pull -f
-			cd ~/$nitrogen_dir
+			repo sync vendor/lge/geehrc
 		else
-			repo_clone
+			repo sync vendor/lge/geehrc
 		fi
 	fi
 	# HAMMERHEAD
@@ -253,20 +247,6 @@ function repo_device_sync {
 }
 
 function repo_clone {
-	if [ $configb = "geehrc" ]; then
-		if ! [ -d device/lge/geehrc ]; then
-			echo -e "${bldred}geehrc: No device tree, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-project/android_device_lge_geehrc.git -b n2 device/lge/geehrc
-		fi
-		if ! [ -d kernel/lge/geehrc ]; then
-			echo -e "${bldred}geehrc: No kernel sources, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-project/android_kernel_lge_geehrc.git -b n2 kernel/lge/geehrc
-		fi
-		if ! [ -d vendor/lge/geehrc ]; then
-			echo -e "${bldred}geehrc: No vendor, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-project/android_vendor_lge_geehrc.git -b n2 vendor/lge/geehrc
-		fi
-	fi
 	if [ $configb = "hammerhead" ]; then
 		if ! [ -d device/lge/hammerhead ]; then
 			echo -e "${bldred}N5: No device tree, downloading...${txtrst}"
