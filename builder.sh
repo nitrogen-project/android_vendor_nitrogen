@@ -256,57 +256,57 @@ function repo_clone {
 	if [ $configb = "geehrc" ]; then
 		if ! [ -d device/lge/geehrc ]; then
 			echo -e "${bldred}geehrc: No device tree, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-project/android_device_lge_geehrc.git -b n device/lge/geehrc
+			git clone https://github.com/nitrogen-project/android_device_lge_geehrc.git -b n2 device/lge/geehrc
 		fi
 		if ! [ -d kernel/lge/geehrc ]; then
 			echo -e "${bldred}geehrc: No kernel sources, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-project/android_kernel_lge_geehrc.git -b n kernel/lge/geehrc
+			git clone https://github.com/nitrogen-project/android_kernel_lge_geehrc.git -b n2 kernel/lge/geehrc
 		fi
 		if ! [ -d vendor/lge/geehrc ]; then
 			echo -e "${bldred}geehrc: No vendor, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-project/android_vendor_lge_geehrc.git -b n vendor/lge/geehrc
+			git clone https://github.com/nitrogen-project/android_vendor_lge_geehrc.git -b n2 vendor/lge/geehrc
 		fi
 	fi
 	if [ $configb = "hammerhead" ]; then
 		if ! [ -d device/lge/hammerhead ]; then
 			echo -e "${bldred}N5: No device tree, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_device_lge_hammerhead.git -b n device/lge/hammerhead
+			git clone https://github.com/nitrogen-os-devices/android_device_lge_hammerhead.git -b n2 device/lge/hammerhead
 		fi
 		if ! [ -d kernel/lge/hammerhead ]; then
 			echo -e "${bldred}N5: No kernel sources, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_kernel_lge_hammerhead.git -b n kernel/lge/hammerhead
+			git clone https://github.com/nitrogen-os-devices/android_kernel_lge_hammerhead.git -b n2 kernel/lge/hammerhead
 		fi
 		if ! [ -d vendor/lge/hammerhead ]; then
 			echo -e "${bldred}N5: No vendor, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_vendor_lge_hammerhead.git -b n vendor/lge/hammerhead
+			git clone https://github.com/nitrogen-os-devices/android_vendor_lge_hammerhead.git -b n2 vendor/lge/hammerhead
 		fi
 	fi
 	if [ $configb = "mako" ]; then
 		if ! [ -d device/lge/mako ]; then
 			echo -e "${bldred}N4: No device tree, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_device_lge_mako.git -b n device/lge/mako
+			git clone https://github.com/nitrogen-os-devices/android_device_lge_mako.git -b n2 device/lge/mako
 		fi
 		if ! [ -d kernel/lge/mako ]; then
 			echo -e "${bldred}N4: No kernel sources, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_kernel_lge_mako.git -b n kernel/lge/mako
+			git clone https://github.com/nitrogen-os-devices/android_kernel_lge_mako.git -b n2 kernel/lge/mako
 		fi
 		if ! [ -d vendor/lge/mako ]; then
 			echo -e "${bldred}N4: No vendor, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_vendor_lge_mako.git -b n vendor/lge/mako
+			git clone https://github.com/nitrogen-os-devices/android_vendor_lge_mako.git -b n2 vendor/lge/mako
 		fi
 	fi
 	if [ $configb = "shamu" ]; then
 		if ! [ -d device/moto/shamu ]; then
 			echo -e "${bldred}N6: No device tree, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_device_moto_shamu.git -b n device/moto/shamu
+			git clone https://github.com/nitrogen-os-devices/android_device_moto_shamu.git -b n2 device/moto/shamu
 		fi
 		if ! [ -d kernel/moto/shamu ]; then
 			echo -e "${bldred}N6: No kernel sources, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_kernel_moto_shamu.git -b n kernel/moto/shamu
+			git clone https://github.com/nitrogen-os-devices/android_kernel_moto_shamu.git -b n2 kernel/moto/shamu
 		fi
 		if ! [ -d vendor/moto/shamu ]; then
 			echo -e "${bldred}N6: No vendor, downloading...${txtrst}"
-			git clone https://github.com/nitrogen-os-devices/android_vendor_moto_shamu.git -b n vendor/moto/shamu
+			git clone https://github.com/nitrogen-os-devices/android_vendor_moto_shamu.git -b n2 vendor/moto/shamu
 		fi
 	fi
 }
