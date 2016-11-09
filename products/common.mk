@@ -53,6 +53,7 @@ PRODUCT_PACKAGES += \
     Busybox \
     Eleven \
     LockClock \
+    masquerade \
     NitrogenWallpapers \
     Stk \
     Superuser \
