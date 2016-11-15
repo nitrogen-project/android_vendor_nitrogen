@@ -21,7 +21,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true \
     persist.sys.dun.override=0 \
     ro.build.selinux=1 \
-    ro.adb.secure=0
+    ro.adb.secure=0 \
+    ro.storage_manager.enabled=1
 
 # Needs for MTP Dirty Hack
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
