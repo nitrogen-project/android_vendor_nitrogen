@@ -61,6 +61,10 @@ PRODUCT_PACKAGES += \
     Superuser \
     Terminal
 
+# Include explicitly to work around GMS issues
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full
+
 # Superuser
 PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/superuser/su:root/sbin/su \
