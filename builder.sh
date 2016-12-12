@@ -15,7 +15,7 @@
 #
 # Nitrogen OS MR2 build script
 
-ver_script=1.6
+ver_script=1.7
 
 nitrogen_dir=nitrogen
 nitrogen_build_dir=$nitrogen_dir-build
@@ -244,6 +244,32 @@ function repo_device_sync {
 			repo_clone
 		fi
 	fi
+	# BULLHEAD
+	if [ $configb = "bullhead" ]; then
+		if [ -d device/lge/bullhead ]; then
+			cd device/lge/bullhead
+			git pull -f
+			cd ~/$nitrogen_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d kernel/lge/bullhead ]; then
+			cd kernel/lge/bullhead
+			git pull -f
+			cd ~/$nitrogen_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d vendor/lge/bullhead ]; then
+			cd vendor/lge/bullhead
+			git pull -f
+			cd ~/$nitrogen_dir
+		else
+			repo_clone
+		fi
+	fi
 }
 
 function repo_clone {
@@ -287,6 +313,20 @@ function repo_clone {
 		if ! [ -d vendor/moto/shamu ]; then
 			echo -e "${bldred}N6: No vendor, downloading...${txtrst}"
 			git clone https://github.com/nitrogen-os-devices/android_vendor_moto_shamu.git -b n2 vendor/moto/shamu
+		fi
+	fi
+	if [ $configb = "bullhead" ]; then
+		if ! [ -d device/lge/bullhead ]; then
+			echo -e "${bldred}N6: No device tree, downloading...${txtrst}"
+			git clone https://github.com/nitrogen-os-devices/android_device_lge_bullhead.git -b n2 device/lge/bullhead
+		fi
+		if ! [ -d kernel/lge/bullhead ]; then
+			echo -e "${bldred}N6: No kernel sources, downloading...${txtrst}"
+			git clone https://github.com/nitrogen-os-devices/android_kernel_lge_bullhead.git -b n2 kernel/lge/bullhead
+		fi
+		if ! [ -d vendor/lge/bullhead ]; then
+			echo -e "${bldred}N6: No vendor, downloading...${txtrst}"
+			git clone https://github.com/nitrogen-os-devices/android_vendor_lge_bullhead.git -b n2 vendor/lge/bullhead
 		fi
 	fi
 }
@@ -335,7 +375,8 @@ while read -p "${grn}Please choose your device:${txtrst}
  2. hammerhead (Google Nexus 5 D820, D821)
  3. mako (Google Nexus 4 E960)
  4. shamu (Google Nexus 6)
- 5. Abort
+ 5. bullhead (Google Nexus 5x)
+ 6. Abort
 :> " cchoice
 do
 case "$cchoice" in
@@ -356,6 +397,10 @@ case "$cchoice" in
 		break
 		;;
 	5 )
+		configb=bullhead
+		break
+		;;
+	6 )
 		break
 		;;
 	* )
