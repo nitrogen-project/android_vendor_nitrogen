@@ -50,3 +50,16 @@ ifneq ($(filter nitrogen_hammerhead,$(TARGET_PRODUCT)),)
         ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/hammerhead.xml
 
 endif
+
+ifneq ($(filter nitrogen_bullhead,$(TARGET_PRODUCT)),)
+
+    PRODUCT_PACKAGES += \
+        NitrogenOTA \
+        libbypass
+
+    PRODUCT_PROPERTY_OVERRIDES += \
+        ro.ota.romname=Nitrogen-OS \
+        ro.ota.version=$(shell date +"%Y%m%d") \
+        ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/bullhead.xml
+
+endif
