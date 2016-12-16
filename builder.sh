@@ -15,7 +15,7 @@
 #
 # Nitrogen OS MR2 build script
 
-ver_script=1.7
+ver_script=1.8
 
 nitrogen_dir=nitrogen
 nitrogen_build_dir=$nitrogen_dir-build
@@ -270,6 +270,32 @@ function repo_device_sync {
 			repo_clone
 		fi
 	fi
+	# Angler
+	if [ $configb = "angler" ]; then
+		if [ -d device/huawei/angler ]; then
+			cd device/huawei/angler
+			git pull -f
+			cd ~/$nitrogen_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d kernel/huawei/angler ]; then
+			cd kernel/huawei/angler
+			git pull -f
+			cd ~/$nitrogen_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d vendor/huawei ]; then
+			cd vendor/huawei
+			git pull -f
+			cd ~/$nitrogen_dir
+		else
+			repo_clone
+		fi
+	fi
 }
 
 function repo_clone {
@@ -329,6 +355,20 @@ function repo_clone {
 			git clone https://github.com/nitrogen-os-devices/android_vendor_lge_bullhead.git -b n2 vendor/lge/bullhead
 		fi
 	fi
+        if [ $configb = "angler" ]; then
+		if ! [ -d device/huawei/angler ]; then
+			echo -e "${bldred}N4: No device tree, downloading...${txtrst}"
+			git clone https://github.com/nitrogen-os-devices/android_device_huawei_angler.git -b n2 device/huawei/angler
+		fi
+		if ! [ -d kernel/huawei/angler ]; then
+			echo -e "${bldred}N4: No kernel sources, downloading...${txtrst}"
+			git clone https://github.com/nitrogen-os-devices/kernel_huawei_angler.git -b n2 kernel/huawei/angler
+		fi
+		if ! [ -d vendor/huawei/angler ]; then
+			echo -e "${bldred}N4: No vendor, downloading...${txtrst}"
+			git clone https://github.com/nitrogen-os-devices/proprietary_vendor_huawei.git -b n2 vendor/huawei
+		fi
+	fi
 }
 
 function sync_nitrogen {
@@ -376,7 +416,8 @@ while read -p "${grn}Please choose your device:${txtrst}
  3. mako (Google Nexus 4 E960)
  4. shamu (Google Nexus 6)
  5. bullhead (Google Nexus 5x)
- 6. Abort
+ 6. angler (Google Nexus 6p)
+ 7. Abort
 :> " cchoice
 do
 case "$cchoice" in
@@ -401,6 +442,10 @@ case "$cchoice" in
 		break
 		;;
 	6 )
+		configb=angler
+		break
+		;;
+	7 )
 		break
 		;;
 	* )
