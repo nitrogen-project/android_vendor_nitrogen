@@ -1,0 +1,2 @@
+# Viper audio support
+allow mediaserver mediaserver_tmpfs:file { read write execute };
