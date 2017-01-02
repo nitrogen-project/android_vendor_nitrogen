@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter nitrogen_geehrc,$(TARGET_PRODUCT)),)
+ifneq ($(filter nitrogen_kenzo,$(TARGET_PRODUCT)),)
 
     PRODUCT_PACKAGES += \
         NitrogenOTA \
@@ -21,58 +21,7 @@ ifneq ($(filter nitrogen_geehrc,$(TARGET_PRODUCT)),)
     PRODUCT_PROPERTY_OVERRIDES += \
         ro.ota.romname=Nitrogen-OS \
         ro.ota.version=$(shell date +"%Y%m%d") \
-        ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/geehrc.xml
+        ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/kenzo.xml
 
 endif
 
-ifneq ($(filter nitrogen_geeb,$(TARGET_PRODUCT)),)
-
-    PRODUCT_PACKAGES += \
-        NitrogenOTA \
-        libbypass
-
-    PRODUCT_PROPERTY_OVERRIDES += \
-        ro.ota.romname=Nitrogen-OS \
-        ro.ota.version=$(shell date +"%Y%m%d") \
-        ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/geeb.xml
-
-endif
-
-ifneq ($(filter nitrogen_mako,$(TARGET_PRODUCT)),)
-
-    PRODUCT_PACKAGES += \
-        NitrogenOTA \
-        libbypass
-
-    PRODUCT_PROPERTY_OVERRIDES += \
-        ro.ota.romname=Nitrogen-OS \
-        ro.ota.version=$(shell date +"%Y%m%d") \
-        ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/mako.xml
-
-endif
-
-ifneq ($(filter nitrogen_hammerhead,$(TARGET_PRODUCT)),)
-
-    PRODUCT_PACKAGES += \
-        NitrogenOTA \
-        libbypass
-
-    PRODUCT_PROPERTY_OVERRIDES += \
-        ro.ota.romname=Nitrogen-OS \
-        ro.ota.version=$(shell date +"%Y%m%d") \
-        ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/hammerhead.xml
-
-endif
-
-ifneq ($(filter nitrogen_bullhead,$(TARGET_PRODUCT)),)
-
-    PRODUCT_PACKAGES += \
-        NitrogenOTA \
-        libbypass
-
-    PRODUCT_PROPERTY_OVERRIDES += \
-        ro.ota.romname=Nitrogen-OS \
-        ro.ota.version=$(shell date +"%Y%m%d") \
-        ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/bullhead.xml
-
-endif
