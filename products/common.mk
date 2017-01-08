@@ -53,6 +53,7 @@ PRODUCT_COPY_FILES += \
 # Extra packages
 PRODUCT_PACKAGES += \
     Busybox \
+    DaylightHeaderNitrogen \
     Eleven \
     LockClock \
     masquerade \
