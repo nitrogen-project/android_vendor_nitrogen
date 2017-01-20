@@ -23,7 +23,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.dun.override=0 \
     ro.build.selinux=1 \
     ro.adb.secure=0 \
-    ro.setupwizard.rotation_locked=true
+    ro.setupwizard.rotation_locked=true \
+    ro.opa.eligible_device=true
 
 # Needs for MTP Dirty Hack
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
