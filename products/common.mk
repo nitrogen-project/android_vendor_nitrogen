@@ -57,10 +57,10 @@ PRODUCT_PACKAGES += \
     DaylightHeaderNitrogen \
     Eleven \
     LockClock \
-    masquerade \
     NitrogenWallpapers \
     Stk \
     Superuser \
+    ThemeInterfacer \
     Terminal
 
 # Include explicitly to work around GMS issues
