@@ -52,8 +52,8 @@ PRODUCT_PACKAGES += \
     Busybox \
     DaylightHeaderNitrogen \
     Eleven \
-    LockClock \
     NitrogenWallpapers \
+    OmniJaws \
     Stk \
     Superuser \
     ThemeInterfacer \
