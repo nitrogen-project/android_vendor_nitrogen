@@ -27,6 +27,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.rotation_locked=true \
     ro.opa.eligible_device=true
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.nitrogen.version=$(PLATFORM_VERSION)-$(BUILD_ID)
+
 # Disable HDCP check
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.nohdcp=1
