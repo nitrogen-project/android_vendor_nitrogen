@@ -11,7 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+ifneq ($(filter 480,$(TARGET_SCREEN_WIDTH)),)
+    PRODUCT_COPY_FILES += \
+        vendor/nitrogen/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
+endif
 ifneq ($(filter 720,$(TARGET_SCREEN_WIDTH)),)
     PRODUCT_COPY_FILES += \
         vendor/nitrogen/prebuilt/common/bootanimation/720.zip:system/media/bootanimation.zip
