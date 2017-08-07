@@ -128,3 +128,29 @@ ifneq ($(filter nitrogen_kenzo,$(TARGET_PRODUCT)),)
         ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/kenzo_new.xml
 
 endif
+
+ifneq ($(filter nitrogen_sprout4,$(TARGET_PRODUCT)),)
+
+    PRODUCT_PACKAGES += \
+        NitrogenOTA \
+        libbypass
+
+    PRODUCT_PROPERTY_OVERRIDES += \
+        ro.ota.romname=Nitrogen-OS \
+        ro.ota.version=$(shell date +"%Y%m%d") \
+        ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/sprout4.xml
+
+endif
+
+ifneq ($(filter nitrogen_sprout8,$(TARGET_PRODUCT)),)
+
+    PRODUCT_PACKAGES += \
+        NitrogenOTA \
+        libbypass
+
+    PRODUCT_PROPERTY_OVERRIDES += \
+        ro.ota.romname=Nitrogen-OS \
+        ro.ota.version=$(shell date +"%Y%m%d") \
+        ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/sprout8.xml
+
+endif
