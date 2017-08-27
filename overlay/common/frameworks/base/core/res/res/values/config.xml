@@ -53,11 +53,13 @@
     <bool name="config_dozeAfterScreenOff">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
+    <!-- Whether safe headphone volume is enabled or not (country specific). -->
+    <bool name="config_safe_media_volume_enabled">false</bool>
+
     <!-- non blockable notification packages -->
     <string-array name="config_nonBlockableNotificationPackages">
         <item>com.android.dialer</item>
         <item>com.google.android.dialer</item>
-        <item>com.android.deskclock</item>
         <item>com.google.android.deskclock</item>
     </string-array>
 

@@ -4,10 +4,8 @@ PRODUCT_BRAND := nitrogen
 PRODUCT_DEVICE := generic
 
 EXCLUDE_SYSTEMUI_TESTS := true
-HWUI_COMPILE_FOR_PERF := true
 
 PRODUCT_BUILD_PROP_OVERRIDES := BUILD_DISPLAY_ID=$(TARGET_PRODUCT)-$(PLATFORM_VERSION)-$(BUILD_ID)
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_BUILD_TYPE=user
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
@@ -34,7 +32,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.nohdcp=1
 
-ADDITIONAL_DEFAULT_PROPERTIES := \
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
     ro.adb.secure=0 \
     ro.secure=0 \
     persist.service.adb.enable=1
@@ -53,24 +51,11 @@ PRODUCT_COPY_FILES += \
 
 # Extra packages
 PRODUCT_PACKAGES += \
-    Busybox \
     DaylightHeaderNitrogen \
-    Eleven \
+    Launcher3 \
     NitrogenWallpapers \
-    OmniJaws \
     Stk \
-    Superuser \
-    ThemeInterfacer \
     Terminal
-
-# Include explicitly to work around GMS issues
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full
-
-# Superuser
-PRODUCT_COPY_FILES += \
-    vendor/nitrogen/prebuilt/common/superuser/su:root/sbin/su \
-    vendor/nitrogen/prebuilt/common/superuser/init.superuser.rc:root/init.superuser.rc
 
 # Init.d script support
 PRODUCT_COPY_FILES += \
@@ -84,16 +69,8 @@ PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/nitrogen/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions
 
-# DU Utils Library
-PRODUCT_BOOT_JARS += \
-    org.dirtyunicorns.utils
-
-# DU Utils Library
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
-
 # Nitrogen OTA
-$(call inherit-product-if-exists, vendor/nitrogen/products/ota.mk)
+#$(call inherit-product-if-exists, vendor/nitrogen/products/ota.mk)
 
 # Boot animations
-$(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk) 
+$(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
