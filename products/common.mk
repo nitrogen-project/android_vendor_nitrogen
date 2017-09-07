@@ -54,6 +54,7 @@ PRODUCT_PACKAGES += \
     DaylightHeaderNitrogen \
     Launcher3 \
     NitrogenWallpapers \
+    OmniJaws \
     Stk \
     Terminal
 
