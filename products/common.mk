@@ -23,7 +23,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1 \
     ro.adb.secure=0 \
     ro.setupwizard.rotation_locked=true \
-    ro.opa.eligible_device=true
+    ro.opa.eligible_device=true \
+    persist.sys.disable_rescue
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nitrogen.version=$(PLATFORM_VERSION)-$(BUILD_ID)
