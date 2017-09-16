@@ -24,7 +24,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0 \
     ro.setupwizard.rotation_locked=true \
     ro.opa.eligible_device=true \
-    persist.sys.disable_rescue
+    persist.sys.disable_rescue=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nitrogen.version=$(PLATFORM_VERSION)-$(BUILD_ID)
