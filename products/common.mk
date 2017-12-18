@@ -91,3 +91,6 @@ PRODUCT_PACKAGES += \
 
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
+
+# Themes
+$(call inherit-product-if-exists, vendor/nitrogen/products/themes.mk)
