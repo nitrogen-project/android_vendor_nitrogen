@@ -75,6 +75,9 @@ PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/nitrogen/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions
 
+PRODUCT_COPY_FILES += \
+    vendor/nitrogen/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+
 # DU Utils Library
 PRODUCT_BOOT_JARS += \
     org.dirtyunicorns.utils
