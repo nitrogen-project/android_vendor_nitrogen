@@ -7,5 +7,5 @@
     <overlay android:priority="7" android:targetPackage="android" />
 
     <application android:hasCode="false"
-                 android:label="Teal" />
+                 android:label="LightTeal" />
 </manifest>

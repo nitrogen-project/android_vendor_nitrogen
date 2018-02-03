@@ -20,4 +20,5 @@
     <color name="accent_device_default_light">#ff3949ab</color>
     <color name="accent_device_default_dark">#ff3f51b5</color>
     <color name="accent_device_default_50">#ffe8f0fe</color>
+    <color name="material_deep_teal_500">#ff3949ab</color>
 </resources>
