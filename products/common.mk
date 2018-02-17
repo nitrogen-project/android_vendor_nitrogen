@@ -96,7 +96,7 @@ PRODUCT_PACKAGES += \
     org.dirtyunicorns.utils
 
 # Nitrogen OTA
-#$(call inherit-product-if-exists, vendor/nitrogen/products/ota.mk)
+$(call inherit-product-if-exists, vendor/nitrogen/products/ota.mk)
 
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
