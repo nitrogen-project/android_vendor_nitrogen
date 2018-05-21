@@ -82,7 +82,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/bin/sysinit:system/bin/sysinit \
     vendor/nitrogen/prebuilt/common/init.d/00banner:system/etc/init.d/00banner \
-    vendor/nitrogen/prebuilt/common/init.d/init.d.rc:root/init.d.rc
+    vendor/nitrogen/prebuilt/common/init.d/init.d.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.d.rc
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
