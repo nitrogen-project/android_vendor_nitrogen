@@ -80,11 +80,12 @@ on property:sys.io.scheduler=bfq
     write /sys/block/dm-0/queue/iosched/slice_idle 0
 
 # Run init.d service on startup
-
 on boot
-    # Run sysinit
     start sysinit
 
+on property:vold.decrypt=trigger_restart_framework 
+    start sysinit
+	
 # adb over network
 on property:adb.network.port=*
     setprop service.adb.tcp.port ${adb.network.port}
