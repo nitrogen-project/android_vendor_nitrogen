@@ -15,6 +15,10 @@
 -->
 
 <permissions>
+    <privapp-permissions package="com.android.dialer">
+        <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+        <permission name="android.permission.STATUS_BAR"/>
+    </privapp-permissions>
     <privapp-permissions package="com.android.settings">
         <permission name="android.permission.NAVIGATION_EDITOR"/>
     </privapp-permissions>
