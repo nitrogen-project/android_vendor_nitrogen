@@ -30,10 +30,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nitrogen.version=$(PLATFORM_VERSION)-$(BUILD_ID)
 
-# Disable HDCP check
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.wfd.nohdcp=1
-
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
     ro.adb.secure=0 \
     ro.secure=0 \
@@ -71,10 +67,7 @@ PRODUCT_COPY_FILES += \
 
 # Extra packages
 PRODUCT_PACKAGES += \
-    DaylightHeaderNitrogen \
     Launcher3 \
-    NitrogenWallpapers \
-    OmniJaws \
     Stk \
     Terminal
 
@@ -90,22 +83,5 @@ PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/nitrogen/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions
 
-PRODUCT_COPY_FILES += \
-    vendor/nitrogen/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
-
-# DU Utils Library
-PRODUCT_BOOT_JARS += \
-    org.dirtyunicorns.utils
-
-# DU Utils Library
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
-
-# Nitrogen OTA
-$(call inherit-product-if-exists, vendor/nitrogen/products/ota.mk)
-
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
-
-# Themes
-$(call inherit-product-if-exists, vendor/nitrogen/products/themes.mk)
