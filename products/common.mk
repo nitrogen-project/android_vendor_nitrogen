@@ -3,6 +3,8 @@ PRODUCT_NAME := nitrogen
 PRODUCT_BRAND := nitrogen
 PRODUCT_DEVICE := generic
 
+NITROGEN_BUILD_DATE := $(shell date -u +%Y%m%d-%H%M)
+
 EXCLUDE_SYSTEMUI_TESTS := true
 
 PRODUCT_BUILD_PROP_OVERRIDES := BUILD_DISPLAY_ID=$(TARGET_PRODUCT)-$(PLATFORM_VERSION)-$(BUILD_ID)
@@ -28,7 +30,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.calibration_cad=/system/etc/calibration_cad.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.nitrogen.version=$(PLATFORM_VERSION)-$(BUILD_ID)
+    org.nitrogen.fingerprint=$(PLATFORM_VERSION)-$(BUILD_ID)-$(NITROGEN_BUILD_DATE)
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
     ro.adb.secure=0 \
