@@ -76,8 +76,8 @@ PRODUCT_PACKAGES += \
 # Init.d script support
 PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/nitrogen/prebuilt/common/init.d/00banner:system/etc/init.d/00banner \
-    vendor/nitrogen/prebuilt/common/init.d/init.d.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.d.rc
+    vendor/nitrogen/prebuilt/common/etc/init/nitrogen-system.rc:system/etc/init/nitrogen-system.rc \
+    vendor/nitrogen/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
