@@ -21,10 +21,6 @@ PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/nitrogen/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions
 
-# Init script file with omni extras
-PRODUCT_COPY_FILES += \
-    vendor/nitrogen/prebuilt/common/init.d/init.d.rc:root/init.d.rc
-
 # Enable SIP and VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
