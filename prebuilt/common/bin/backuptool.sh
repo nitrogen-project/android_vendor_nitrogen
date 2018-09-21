@@ -6,11 +6,28 @@
 export C=/tmp/backupdir
 export S=/system
 
+export ADDOND_VERSION=1
+
+# Scripts in /system/addon.d expect to find backuptool.functions in /tmp
+cp -f /tmp/install/bin/backuptool.functions /tmp
+
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
   if [ -d /system/addon.d/ ]; then
     mkdir -p /tmp/addon.d/
     cp -a /system/addon.d/* /tmp/addon.d/
+
+    # Discard any scripts that aren't at least our version level
+    for f in /postinstall/tmp/addon.d/*sh; do
+      SCRIPT_VERSION=$(grep "^# ADDOND_VERSION=" $f | cut -d= -f2)
+      if [ -z "$SCRIPT_VERSION" ]; then
+        SCRIPT_VERSION=1
+      fi
+      if [ $SCRIPT_VERSION -lt $ADDOND_VERSION ]; then
+        rm $f
+      fi
+    done
+
     chmod 755 /tmp/addon.d/*.sh
   fi
 }
@@ -18,10 +35,12 @@ preserve_addon_d() {
 # Restore /system/addon.d from /tmp/addon.d
 restore_addon_d() {
   if [ -d /tmp/addon.d/ ]; then
+    mkdir -p /system/addon.d/
     cp -a /tmp/addon.d/* /system/addon.d/
     rm -rf /tmp/addon.d/
   fi
 }
+
 
 # Execute /system/addon.d/*.sh scripts with $1 parameter
 run_stage() {
