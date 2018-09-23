@@ -1,5 +1,13 @@
 # Additional apps
+
 PRODUCT_PACKAGES += \
-    Phonograph \
-    PixelLauncher
+    PixelLauncher \
+    Vinyl \
+    BNet \
+    Discord \
+    GroupMe \
+    Steam
+
+
+
 
