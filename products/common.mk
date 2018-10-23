@@ -75,6 +75,15 @@ PRODUCT_PACKAGES += \
     Stk \
     Terminal
 
+# CAF
+# Telephony packages
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 # Init.d script support
 PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/bin/sysinit:system/bin/sysinit \
