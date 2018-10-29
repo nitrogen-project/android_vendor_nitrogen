@@ -45,6 +45,14 @@ DEVICE_PACKAGE_OVERLAYS += vendor/nitrogen/overlay/common
 PRODUCT_COPY_FILES +=  \
     vendor/nitrogen/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
+# Weather
+PRODUCT_COPY_FILES +=  \
+    vendor/nitrogen/prebuilt/common/etc/sysconfig/org.pixelexperience.weather.client.xml:system/etc/sysconfig/org.pixelexperience.weather.client.xml \
+    vendor/nitrogen/prebuilt/common/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    org.pixelexperience.weather.revision=2
+
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
@@ -73,7 +81,8 @@ PRODUCT_PACKAGES += \
     messaging \
     OmniRecord \
     Stk \
-    Terminal
+    Terminal \
+    WeatherClient
 
 # CAF
 # Telephony packages
