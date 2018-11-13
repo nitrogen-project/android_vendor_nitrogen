@@ -17,4 +17,7 @@ ifneq ($(filter nitrogen_oneplus3 nitrogen_kenzo nitrogen_land nitrogen_santoni 
 PRODUCT_PACKAGES += \
     Updates
 
+PRODUCT_COPY_FILES +=  \
+    vendor/nitrogen/prebuilt/common/etc/permissions/org.nitrogen.ota.xml:system/etc/permissions/org.nitrogen.ota.xml \
+
 endif
