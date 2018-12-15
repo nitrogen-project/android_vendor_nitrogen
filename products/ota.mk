@@ -15,6 +15,6 @@
 ifneq ($(filter nitrogen_oneplus3 nitrogen_kenzo nitrogen_land nitrogen_santoni nitrogen_mako nitrogen_shamu nitrogen_taimen,$(TARGET_PRODUCT)),)
 
 PRODUCT_PACKAGES += \
-    NitrogenOTA
+    Updates
 
 endif
