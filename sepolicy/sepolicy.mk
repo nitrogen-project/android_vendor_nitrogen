@@ -3,5 +3,5 @@
 # inherit from pure
 #
 
-BOARD_SEPOLICY_DIRS += \
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     vendor/nitrogen/sepolicy
