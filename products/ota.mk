@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter nitrogen_oneplus3 nitrogen_kenzo nitrogen_land nitrogen_santoni nitrogen_mako nitrogen_shamu nitrogen_taimen nitrogen_chiron nitrogen_cancro nitrogen_beryllium nitrogen_whyred nitrogen_X00T nitrogen_polaris,$(TARGET_PRODUCT)),)
+ifneq ($(filter nitrogen_oneplus3 nitrogen_kenzo nitrogen_land nitrogen_santoni nitrogen_mako nitrogen_shamu nitrogen_taimen nitrogen_chiron nitrogen_cancro nitrogen_beryllium nitrogen_whyred nitrogen_X00T nitrogen_polaris nitrogen_X01BD,$(TARGET_PRODUCT)),)
 
 PRODUCT_PACKAGES += \
     Updates
