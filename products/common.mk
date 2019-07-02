@@ -106,6 +106,10 @@ PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/nitrogen/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
 
+# Priv-app config
+PRODUCT_COPY_FILES += \
+    vendor/nitrogen/config/permissions/privapp-permissions-nitrogen.xml:system/etc/permissions/privapp-permissions-nitrogen.xml
+
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
 
