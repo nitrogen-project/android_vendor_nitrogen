@@ -87,8 +87,10 @@
 
     <!-- Misc -->
     <bool name="config_buttonTextAllCaps">false</bool>
-    <dimen name="config_dialogCornerRadius">8.0dip</dimen>
+    <dimen name="config_bottomDialogCornerRadius">16.0dip</dimen>
     <dimen name="config_buttonCornerRadius">4.0dip</dimen>
+    <dimen name="config_dialogCornerRadius">8.0dip</dimen>
+    <dimen name="config_fullTaskSnapshotScale">0.8</dimen>
     <dimen name="config_progressBarCornerRadius">1000.0dip</dimen>
 
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
@@ -102,6 +104,13 @@
 
     <!-- Component name for default assistant on this device -->
     <string name="config_defaultAssistantComponentName">com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService</string>
+
+    <!-- The package name for the default wellbeing app.
+         This package must be trusted, as it has the permissions to control other applications
+         on the device.
+         Example: "com.android.wellbeing"
+     -->
+    <string name="config_defaultWellbeingPackage">com.google.android.apps.wellbeing</string>
 
    <!-- Set icon mask to circle -->
    <string name="config_icon_mask" translatable="false">"M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0"</string>
