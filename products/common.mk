@@ -93,7 +93,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/addon.d/50-nitrogen.sh:system/addon.d/50-nitrogen.sh \
     vendor/nitrogen/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/nitrogen/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
+    vendor/nitrogen/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/nitrogen/prebuilt/common/bin/system-mount.sh:install/bin/system-mount.sh
 
 # Priv-app config
 PRODUCT_COPY_FILES += \
