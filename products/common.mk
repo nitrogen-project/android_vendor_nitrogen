@@ -74,6 +74,15 @@ PRODUCT_PACKAGES += \
     Stk \
     Terminal
 
+# Filesystems tools
+PRODUCT_PACKAGES += \
+    fsck.exfat \
+    fsck.ntfs \
+    mke2fs \
+    mkfs.exfat \
+    mkfs.ntfs \
+    mount.ntfs
+
 # CAF
 # Telephony packages
 #PRODUCT_PACKAGES += \
