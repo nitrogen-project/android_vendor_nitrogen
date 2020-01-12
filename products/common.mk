@@ -114,6 +114,7 @@ PRODUCT_COPY_FILES += \
 
 # Themes
 PRODUCT_PACKAGES += \
+    BlackTheme \
     ThemePicker \
     DefaultThemesStub
 
