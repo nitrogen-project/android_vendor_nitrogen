@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter nitrogen_oneplus3 nitrogen_beryllium,$(TARGET_PRODUCT)),)
+ifneq ($(filter nitrogen_oneplus3 nitrogen_beryllium nitrogen_X01BD,$(TARGET_PRODUCT)),)
 
 PRODUCT_PACKAGES += \
     Updates
