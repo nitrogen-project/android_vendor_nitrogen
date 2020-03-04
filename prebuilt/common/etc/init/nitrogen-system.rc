@@ -43,6 +43,11 @@ on boot
 
     setprop ro.boot.wificountrycode VE
 
+on post-fs-data
+    # Create an additional OTA package directory that unlike /data/ota_package
+    # will not be touched by GmsCore.
+    mkdir /data/system_updates 0770 system cache
+
 # Disable ril services if noril prop is set
 on property:ro.radio.noril=1
     stop ril-daemon

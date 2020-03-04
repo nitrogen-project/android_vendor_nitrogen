@@ -2,3 +2,5 @@
 allow platform_app cache_file:dir { search write add_name };
 allow platform_app cache_recovery_file:dir { search write add_name };
 allow platform_app cache_recovery_file:file { create write open getattr setattr };
+allow platform_app ota_package_file:dir { add_name create write open read getattr setattr };
+allow platform_app ota_package_file:file { create write open read getattr setattr };
