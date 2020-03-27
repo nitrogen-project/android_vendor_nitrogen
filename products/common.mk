@@ -83,14 +83,15 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     mount.ntfs
 
-# CAF
-# Telephony packages
-#PRODUCT_PACKAGES += \
-#    ims-ext-common \
-#    telephony-ext
-
-#PRODUCT_BOOT_JARS += \
-#    telephony-ext
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := false
+ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+TARGET_FACE_UNLOCK_SUPPORTED := true
+endif
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
 
 # Init.d script support
 PRODUCT_COPY_FILES += \
