@@ -80,6 +80,11 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     mount.ntfs
 
+# Navbar
+PRODUCT_PACKAGES += \
+    GesturalNavigationOverlayLong \
+    GesturalNavigationOverlayMedium
+
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED := false
 ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
