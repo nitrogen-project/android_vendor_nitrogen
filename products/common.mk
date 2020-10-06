@@ -83,7 +83,8 @@ PRODUCT_PACKAGES += \
 # Navbar
 PRODUCT_PACKAGES += \
     GesturalNavigationOverlayLong \
-    GesturalNavigationOverlayMedium
+    GesturalNavigationOverlayMedium \
+    GesturalNavigationOverlayHidden
 
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED := false
