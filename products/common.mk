@@ -115,7 +115,8 @@ PRODUCT_COPY_FILES += \
 
 # Themes
 PRODUCT_PACKAGES += \
-    ThemePicker
+    ThemePicker \
+    DefaultThemesStub
 
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
