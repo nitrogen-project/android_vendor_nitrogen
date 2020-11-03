@@ -113,6 +113,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/nitrogen/config/permissions/privapp-permissions-nitrogen.xml:system/etc/permissions/privapp-permissions-nitrogen.xml
 
+# Themes
+PRODUCT_PACKAGES += \
+    ThemePicker
+
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
 
