@@ -68,6 +68,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     messaging \
+    QuickAccessWallet \
     Stk \
     Terminal
 
