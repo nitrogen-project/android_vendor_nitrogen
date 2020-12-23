@@ -66,6 +66,7 @@ PRODUCT_COPY_FILES += \
 
 # Extra packages
 PRODUCT_PACKAGES += \
+    AndroidAutoStub \
     Launcher3 \
     messaging \
     QuickAccessWallet \
