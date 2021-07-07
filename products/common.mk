@@ -119,6 +119,12 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     DefaultThemesStub
 
+# Default notification/alarm/ringtone sounds
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.notification_sound=Argon.ogg \
+    ro.config.alarm_alert=Hassium.ogg \
+    ro.config.ringtone=Aquila.ogg
+
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
 
