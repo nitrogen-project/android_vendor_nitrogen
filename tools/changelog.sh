@@ -33,16 +33,16 @@ done
 
 sed -i 's/[/]$//' $Changelog
 
-if [ -e ./out/target/product/$DEVICE/$Changelog ]
+if [ -e $OUT_DIR/target/product/$DEVICE/$Changelog ]
 then
-    rm ./out/target/product/$DEVICE/$Changelog
+    rm $OUT_DIR/out/target/product/$DEVICE/$Changelog
 fi
 
-if [ -e ./out/target/product/$DEVICE/system/etc/$Changelog ]
+if [ -e $OUT_DIR/target/product/$DEVICE/system/etc/$Changelog ]
 then
-    rm ./out/target/product/$DEVICE/system/etc/$Changelog
+    rm $OUT_DIR/target/product/$DEVICE/system/etc/$Changelog
 fi
 
-cp $Changelog ./out/target/product/$DEVICE/system/etc/$Changelog
-cp $Changelog ./out/target/product/$DEVICE/
+cp $Changelog $OUT_DIR/target/product/$DEVICE/system/etc/$Changelog
+cp $Changelog $OUT_DIR/target/product/$DEVICE/
 rm $Changelog
