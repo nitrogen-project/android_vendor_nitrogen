@@ -122,6 +122,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.alarm_alert=Hassium.ogg \
     ro.config.ringtone=Aquila.ogg
 
+# Enable support of one-handed mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_one_handed_mode=true
+
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
 
