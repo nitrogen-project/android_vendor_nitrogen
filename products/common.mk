@@ -81,11 +81,9 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     mount.ntfs
 
-# Navbar
+# NavigationBarMode
 PRODUCT_PACKAGES += \
-    GesturalNavigationOverlayLong \
-    GesturalNavigationOverlayMedium \
-    GesturalNavigationOverlayHidden
+    NavigationBarMode2ButtonOverlay
 
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED := false
