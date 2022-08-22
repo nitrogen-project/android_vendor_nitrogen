@@ -115,6 +115,7 @@ PRODUCT_COPY_FILES += \
 # Themes
 PRODUCT_PACKAGES += \
     BlackTheme \
+    ImmersiveNavigationOverlay \
     ThemePicker \
     ThemesStub
 
