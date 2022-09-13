@@ -86,15 +86,14 @@ PRODUCT_PACKAGES += \
     NavigationBarMode2ButtonOverlay
 
 # Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED ?= true
-ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
+TARGET_FACE_UNLOCK_SUPPORTED := false
+ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
 PRODUCT_PACKAGES += \
     FaceUnlockService
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
+TARGET_FACE_UNLOCK_SUPPORTED := true
 endif
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
 
 # Init.d script support
 PRODUCT_COPY_FILES += \
@@ -126,10 +125,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
-
-# Disable remote keyguard animation
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    persist.wm.enable_remote_keyguard_animation=0
 
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
