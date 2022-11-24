@@ -127,6 +127,44 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
 
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/addon.d/50-nitrogen.sh \
+    system/app/GoogleExtShared/GoogleExtShared.apk \
+    system/app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk \
+    system/bin/sysinit \
+    system/etc/apns-conf.xml \
+    system/etc/calibration_cad.xml \
+    system/etc/init.d/00banner \
+    system/etc/init/nitrogen-system.rc \
+    system/etc/permissions/android.hardware.biometrics.face.xml \
+    system/etc/permissions/android.software.sip.voip.xml \
+    system/etc/permissions/privapp-permissions-google-system.xml \
+    system/etc/permissions/privapp-permissions-nitrogen.xml \
+    system/etc/permissions/privapp-permissions-org.pixelexperience.faceunlock.xml \
+    system/etc/sysconfig/dialer_experience.xml \
+    system/etc/sysconfig/google-hiddenapi-package-allowlist.xml \
+    system/etc/sysconfig/hiddenapi-whitelist-org.pixelexperience.faceunlock.xml \
+    system/etc/sysconfig/preinstalled-packages-platform-full-base.xml \
+    system/lib/libjni_latinimegoogle.so \
+    system/lib64/faceunlock_vendor_dependencies.so \
+    system/lib64/libFaceDetectCA.so \
+    system/lib64/libMegviiUnlock-jni-1.2.so \
+    system/lib64/libMegviiUnlock.so \
+    system/lib64/libarcsoft-lib.so \
+    system/lib64/libarcsoft_faceid.so \
+    system/lib64/libarcsoftbase.so \
+    system/lib64/libjni_latinimegoogle.so \
+    system/lib64/libmegface.so \
+    system/lib64/libmpbase.so \
+    system/media/bootanimation.zip \
+    system/priv-app/FaceUnlockService/FaceUnlockService.apk \
+    system/priv-app/GooglePackageInstaller/GooglePackageInstaller.apk \
+    system/priv-app/TagGoogle/TagGoogle.apk \
+    system/bin/health \
+    system/lib64/libcuttlefish_fs.so \
+    system/lib64/libcuttlefish_utils.so \
+    system/lib64/libfruit.so
+
 # Boot animations
 $(call inherit-product-if-exists, vendor/nitrogen/products/bootanimation.mk)
 
