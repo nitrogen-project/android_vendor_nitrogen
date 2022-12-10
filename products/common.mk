@@ -128,6 +128,15 @@ PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/etc/permissions/privapp-permissions-google-as.xml:product/etc/permissions/privapp-permissions-google-as.xml \
     vendor/nitrogen/prebuilt/common/etc/permissions/com.google.android.apps.dialer.call_recording_audio.features.xml:product/etc/permissions/com.google.android.apps.dialer.call_recording_audio.features.xml
 
+# Smartspace
+PRODUCT_PACKAGES += \
+    DeviceIntelligenceNetworkPrebuilt \
+    DevicePersonalizationPrebuiltPixel2021 \
+    PixelConfigOverlayCommon
+
+PRODUCT_COPY_FILES += \
+    vendor/nitrogen/prebuilt/common/etc/permissions/privapp-permissions-google-as.xml:product/etc/permissions/privapp-permissions-google-as.xml
+
 # Default notification/alarm/ringtone sounds
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.notification_sound=Argon.ogg \

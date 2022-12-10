@@ -19,7 +19,7 @@ android_app_import {
         name: "DevicePersonalizationPrebuiltPixel2021",
         owner: "gms",
         apk: "DevicePersonalizationPrebuiltPixel2021.apk",
-        certificate: "platform",
+        presigned: true,
         dex_preopt: {
                 enabled: false,
         },

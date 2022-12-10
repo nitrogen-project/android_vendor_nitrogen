@@ -19,7 +19,7 @@ android_app_import {
         name: "DeviceIntelligenceNetworkPrebuilt",
         owner: "gms",
         apk: "DeviceIntelligenceNetworkPrebuilt.apk",
-        certificate: "platform",
+        presigned: true,
         dex_preopt: {
                 enabled: false,
         },
