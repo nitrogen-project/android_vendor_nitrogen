@@ -116,7 +116,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     BlackTheme \
     ThemePicker \
-    DefaultThemesStub
+    ThemesStub
 
 # Smartspace
 PRODUCT_PACKAGES += \
