@@ -5,5 +5,5 @@ log -p i -t start "** *  *   *  *  * *  * *    *   ** *  *  * *";
 log -p i -t start "* **  *   *  **** *  * * ** *** * **  *  * ***";
 log -p i -t start "*  *  *   *  * *  *  * *  * *   *  *  *  *   *";
 log -p i -t start "*  * ***  *  * *  **** **** *** *  *  **** ***";
-log -p i -t start "* By xyyx ******************** Android 9.0.0 *";
+log -p i -t start "* By xyyx ******************** Android 13.0.0 *";
 
