@@ -119,7 +119,14 @@ PRODUCT_PACKAGES += \
     BlackTheme \
     ImmersiveNavigationOverlay \
     ThemePicker \
-    ThemesStub
+    ThemesStub \
+    SystemUIClocks-BigNum \
+    SystemUIClocks-Calligraphy \
+    SystemUIClocks-Flex \
+    SystemUIClocks-Growth \
+    SystemUIClocks-Handwritten \
+    SystemUIClocks-Inflate \
+    SystemUIClocks-NumOverlap
 
 # Smartspace
 PRODUCT_PACKAGES += \
