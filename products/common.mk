@@ -88,7 +88,8 @@ PRODUCT_PACKAGES += \
 # Face Unlock
 ifeq ($(TARGET_SUPPORTS_64_BIT_APPS),true)
 PRODUCT_PACKAGES += \
-    FaceUnlock
+    FaceUnlock \
+    ParanoidSenseTranslation
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.face.sense_service=true
