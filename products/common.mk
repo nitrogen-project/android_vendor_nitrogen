@@ -124,7 +124,7 @@ PRODUCT_PACKAGES += \
     SystemUIClocks-Calligraphy \
     SystemUIClocks-Flex \
     SystemUIClocks-Growth \
-    SystemUIClocks-Handwritten \
+    SystemUIClocks-Metro \
     SystemUIClocks-Inflate \
     SystemUIClocks-NumOverlap
 

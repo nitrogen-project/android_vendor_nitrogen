@@ -47,9 +47,9 @@ android_app_import {
 }
 
 android_app_import {
-	name: "SystemUIClocks-Handwritten",
+	name: "SystemUIClocks-Metro",
 	owner: "google",
-	apk: "SystemUIClocks-Handwritten/SystemUIClocks-Handwritten.apk",
+	apk: "SystemUIClocks-Metro/SystemUIClocks-Metro.apk",
 	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
