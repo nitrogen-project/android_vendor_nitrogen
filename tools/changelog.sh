@@ -43,6 +43,5 @@ then
     rm $OUT_DIR/target/product/$DEVICE/system/etc/$Changelog
 fi
 
-cp $Changelog $OUT_DIR/target/product/$DEVICE/system/etc/$Changelog
 cp $Changelog $OUT_DIR/target/product/$DEVICE/
 rm $Changelog
