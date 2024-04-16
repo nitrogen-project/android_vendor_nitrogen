@@ -1,8 +1,6 @@
 #!/bin/sh
 
-export Changelog=Changelog.txt
-
-DEVICE=$(echo $TARGET_PRODUCT | cut -d "_" -f2)
+export Changelog=$1/Changelog.txt
 
 if [ -f $Changelog ];
 then
@@ -32,17 +30,3 @@ echo "" >> $Changelog;
 done
 
 sed -i 's/[/]$//' $Changelog
-
-if [ -e $OUT_DIR/target/product/$DEVICE/$Changelog ]
-then
-    rm $OUT_DIR/out/target/product/$DEVICE/$Changelog
-fi
-
-if [ -e $OUT_DIR/target/product/$DEVICE/system/etc/$Changelog ]
-then
-    rm $OUT_DIR/target/product/$DEVICE/system/etc/$Changelog
-fi
-
-cp $Changelog $OUT_DIR/target/product/$DEVICE/system/etc/$Changelog
-cp $Changelog $OUT_DIR/target/product/$DEVICE/
-rm $Changelog
