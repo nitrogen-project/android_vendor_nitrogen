@@ -64,6 +64,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/nitrogen/prebuilt/common/etc/calibration_cad.xml:system/etc/calibration_cad.xml
 
+#Build changelog
+PRODUCT_PACKAGES += \
+    Changelog.txt
+
 # Extra packages
 PRODUCT_PACKAGES += \
     Launcher3 \
