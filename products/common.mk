@@ -18,7 +18,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     drm.service.enabled=true \
     net.tethering.noprovisioning=true \
     persist.sys.dun.override=0 \
-    ro.build.selinux=1 \
     ro.setupwizard.rotation_locked=true \
     ro.opa.eligible_device=true \
     persist.sys.disable_rescue=true \
