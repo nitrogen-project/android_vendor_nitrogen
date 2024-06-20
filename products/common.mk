@@ -6,28 +6,14 @@ PRODUCT_DEVICE := generic
 NITROGEN_BUILD_DATE := $(shell date -u +%Y%m%d-%H%M)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    keyguard.no_require_sim=true \
-    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
-    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.com.google.clientidbase=android-google \
-    ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
-    ro.setupwizard.network_required=false \
-    ro.setupwizard.gservices_delay=-1 \
     ro.com.android.dataroaming=false \
-    drm.service.enabled=true \
-    net.tethering.noprovisioning=true \
-    persist.sys.dun.override=0 \
-    ro.setupwizard.rotation_locked=true \
     ro.opa.eligible_device=true \
-    persist.sys.disable_rescue=true \
     ro.config.calibration_cad=/system/etc/calibration_cad.xml
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     org.nitrogen.fingerprint=$(PLATFORM_VERSION)-$(BUILD_ID)-$(NITROGEN_BUILD_DATE)
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
-    persist.service.adb.enable=1
 
 # Common overlay
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/nitrogen/overlay/common
@@ -97,18 +83,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
 
-# Init.d script support
-PRODUCT_COPY_FILES += \
-    vendor/nitrogen/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/nitrogen/prebuilt/common/etc/init/nitrogen-system.rc:system/etc/init/nitrogen-system.rc \
-    vendor/nitrogen/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
-
-# Backup Tool
-PRODUCT_COPY_FILES += \
-    vendor/nitrogen/prebuilt/common/addon.d/50-nitrogen.sh:system/addon.d/50-nitrogen.sh \
-    vendor/nitrogen/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/nitrogen/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
-
 # Priv-app config
 PRODUCT_COPY_FILES += \
     vendor/nitrogen/config/permissions/privapp-permissions-nitrogen.xml:system/etc/permissions/privapp-permissions-nitrogen.xml
@@ -157,14 +131,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
-    system/addon.d/50-nitrogen.sh \
     system/app/GoogleExtShared/GoogleExtShared.apk \
     system/app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk \
-    system/bin/sysinit \
     system/etc/apns-conf.xml \
     system/etc/calibration_cad.xml \
-    system/etc/init.d/00banner \
-    system/etc/init/nitrogen-system.rc \
     system/etc/permissions/android.hardware.biometrics.face.xml \
     system/etc/permissions/android.software.sip.voip.xml \
     system/etc/permissions/privapp-permissions-google-system.xml \
